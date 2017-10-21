@@ -17,11 +17,11 @@ int main(int argc, char const *argv[]) {
     so the last step of gathering those objects is more easier !!*/
 
     /*algorithme's sructures*/
-    int v[] = {1, 4, 5, 7 }; //0 so we start counting -index- at 1
+    int v[] = {1, 4, 5, 7 };
     int w[] = {1, 3, 4, 5 };
-//    int v[] = {0  ,8, 2, 7, 6, 4}; //0 so we start counting -index- at 1
+//    int v[] = {0  ,8, 2, 7, 6, 4};
 //    int w[] = {0  ,1, 3, 6, 7, 2};
-    int mat[N][W];
+    int mat[N][W+1];
 
     /*init matrix*/
     // --- omit this when you start j from 0
@@ -41,12 +41,9 @@ int main(int argc, char const *argv[]) {
         }
     }
 
-    printf("kkkkkkkkd %d \n", mat[0][7]);
 
     for (int i = 1; i < N; i++) {
-
         for (int j = 0; j <= W; j++) {
-            printf("kkkkkkkk %d \n", mat[0][7]);
             if (w[i] > j) {
                 mat[i][j] = mat[i - 1][j];
             } else {
