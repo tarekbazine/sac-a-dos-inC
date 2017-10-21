@@ -17,11 +17,11 @@ int main(int argc, char const *argv[]) {
     so the last step of gathering those objects is more easier !!*/
 
     /*algorithme's sructures*/
-    int v[] = {1, 4, 5, 7 };
-    int w[] = {1, 3, 4, 5 };
+    int v[] = {1, 4, 5, 7};
+    int w[] = {1, 3, 4, 5};
 //    int v[] = {0  ,8, 2, 7, 6, 4};
 //    int w[] = {0  ,1, 3, 6, 7, 2};
-    int mat[N][W+1];
+    int mat[N][W + 1];
 
     /*init matrix*/
     // --- omit this when you start j from 0
@@ -34,9 +34,9 @@ int main(int argc, char const *argv[]) {
 //    }
     //this an optimization ???!! we deleting a not-needed row
     for (int j = 0; j <= W; j++) {
-        if (w[0] > j){
+        if (w[0] > j) {
             mat[0][j] = 0;
-        } else{
+        } else {
             mat[0][j] = w[0];
         }
     }
@@ -62,20 +62,20 @@ int main(int argc, char const *argv[]) {
     }
 
 //    //the optimal weight
-//    int optIndex;
-//    for (int i = 1; i <W ; ++i) {
-//        if (mat[N][i]>mat[N][i+1]){
-//            optIndex=i;
-//        } else{
-//            optIndex=i+1;
-//        }
-//    }
-//    printf("the optimal weight %d ", mat[N][optIndex]);
+    printf("\n\nthe optimal weight %d \n\n", mat[N-1][W]);
 
     //list of the selected objects
-//    for (int i = N; i > 0; i--) {
-//      if()
-//    }
+    int j = W;
+    for (int i = N - 1; i > 0; i--) {
+        if ((mat[i][j] == 0)) {
+            printf("fin");
+            break;
+        }
+        if ((mat[i][j] != mat[i - 1][j])) {
+            printf("object num %d has been selected \n", i + 1);
+            j = j - w[i];
+        }
+    }
 
     return 0;
 }
